@@ -6,7 +6,7 @@
 #    By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/28 10:00:19 by thuynh            #+#    #+#              #
-#    Updated: 2017/11/28 10:59:59 by thuynh           ###   ########.fr        #
+#    Updated: 2017/11/28 11:47:02 by thuynh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ IDIR = includes/ \
 	   libft/includes/
 
 MDIR = libft # other folders
-SDIR = srcs/
-ODIR = objs/
+SDIR = srcs
+ODIR = objs
 
 MAKE = $(patsubst %,make -C %,$(MDIR))
 
@@ -33,11 +33,12 @@ OBJ  = $(patsubst %,$(ODIR)/%,$(_OBJ))
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SRC)
-	$(MAKE)
-	mkdir objs/
-	mv *.o objs/
-	$(CC) -o $(NAME) $(OBJ)
+	@$(CC) $(CFLAGS) -c $(SRC)
+	@$(MAKE)
+	@mkdir objs/
+	@mv *.o objs/
+	@$(CC) -o $(NAME) $(OBJ) -L libft -lft
+	@echo "finished compiling"
 
 clean:
 	@make clean -C $(MDIR)

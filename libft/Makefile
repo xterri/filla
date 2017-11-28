@@ -31,8 +31,8 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Werror -Wextra -c -I includes/ $(SRC)
-	ar rcs $(NAME) $(OBJ)
+	@gcc -Wall -Werror -Wextra -c -I includes/ $(SRC)
+	@ar rcs $(NAME) $(OBJ)
 clean:
 	@rm -rf $(OBJ)
 fclean: clean
