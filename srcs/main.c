@@ -6,7 +6,7 @@
 /*   By: thuynh <thuynh@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 10:50:32 by thuynh            #+#    #+#             */
-/*   Updated: 2017/11/28 12:32:00 by thuynh           ###   ########.fr       */
+/*   Updated: 2017/11/28 16:09:49 by thuynh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int		main(void)
 			// set the player (determine if they are 'O' or 'X')
 		// if line starts with "Plateau "
 			// set and save the board information (know where the pieces are on the board)
+		if (ft_strstr(line, "Plateau "))
+		{
+			// make copy of board
+			puts("save board information");
+		}
 		// if line begins with "Piece "
 			// get the token information (#'s after 'Piece' = size of piece)
 			// when enterin the coordinates onto the board, will always read from [0, 0], regardless if token exists there or not
